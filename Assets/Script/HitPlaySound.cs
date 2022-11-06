@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class HitPlaySound : MonoBehaviour
 {
-    private AudioSource  audio;
+    //private AudioSource  audio;
     [SerializeField]
     private AudioClip sound;
     // Start is called before the first frame update
     void Start()
     {
-        audio = gameObject.AddComponent<AudioSource>();
+        //audio = gameObject.AddComponent<AudioSource>();
         
     }
 

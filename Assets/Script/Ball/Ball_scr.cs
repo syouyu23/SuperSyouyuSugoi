@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Ball_scr : MonoBehaviour
 {
-    private float speed = 10.0f;
-    private float minSpeed =10.0f;
-    private float maxSpeed = 20.0f;
+    public float speed = 10.0f;
+    public float minSpeed =10.0f;
+    public float maxSpeed = 20.0f;
 
-    Rigidbody myrigitbody;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -26,7 +25,7 @@ public class Ball_scr : MonoBehaviour
     {
         Vector2 velocity = rb.velocity;
         float clampSpeed = Mathf.Clamp(velocity.magnitude, minSpeed, maxSpeed);
-        rb.velocity = clampSpeed ;
+        rb.velocity = velocity.normalized * clampSpeed;
 
         
 
