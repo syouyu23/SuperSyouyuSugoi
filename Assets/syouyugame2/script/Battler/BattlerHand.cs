@@ -17,8 +17,13 @@ public class BattlerHand : MonoBehaviour
         List.Remove(card);
     }
 
+    //èD‚ğ®“Ú‚·‚é
+
+
     public void ResetPosition()
     {
+        //Sort:Number‚Ì¬‚³‚¢‡‚É‚È‚ç‚×‚é
+        List.Sort((card0, card1) => card0.Base.Number - card1.Base.Number);
         for (int i = 0; i < List.Count; i++)
 
         {
@@ -26,5 +31,12 @@ public class BattlerHand : MonoBehaviour
             List[i].transform.localPosition = new Vector3(posX, 0);
         }
 
+    }
+    public Card RandomRemove()
+    {
+        int r = Random.Range(0, List.Count);
+        Card card = List[r];
+        Remove(card);
+        return card;
     }
 }

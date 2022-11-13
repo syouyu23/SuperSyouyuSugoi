@@ -14,8 +14,9 @@ public class Card : MonoBehaviour
     public CardBase Base { get; private set; }
     
 
+
     //ŠÖ”‚ğ“o˜^
-    public UnityAction OnClickCard;
+    public UnityAction<Card> OnClickCard;
 
 
     public void Set(CardBase cardBase)
@@ -30,8 +31,7 @@ public class Card : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log("ƒNƒŠƒbƒN");
-        OnClickCard?.Invoke();
+        OnClickCard?.Invoke(this);
 
     }
 
